@@ -38,14 +38,15 @@ install -m644 data/levels/*.png %{buildroot}%_gamesdatadir/%name/levels/
 %find_lang %{name}
 
 #Menu items
-install -d %{buildroot}%{_menudir}
-cat <<EOF > %{buildroot}%{_menudir}/%{name}
-?package(%{name}):command="%{_gamesbindir}/%{name}" \
-		  icon=%{name}.png \
-		  needs="x11" \
-		  section="Amusement/Arcade" \
-		  title="Luola"\
-		  longtitle="%{Summary}"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
+cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
+[Desktop Entry]
+Type=Application
+Exec=%{_gamesbindir}/%{name}		  
+Icon=%{name}		  		  
+Categories=Game;ArcadeGame;		  
+Name=Luola		  
+Comment=%{Summary}
 EOF
 #Icons
 install -d $RPM_BUILD_ROOT{%{_iconsdir},%{_miconsdir},%{_liconsdir}}
@@ -67,7 +68,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README AUTHORS
 %{_gamesbindir}/*
 %{_gamesdatadir}/%{name}
-%{_menudir}/%{name}
+%{_datadir}/applications/mandriva-%{name}.desktop
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
