@@ -13,6 +13,7 @@ Source2:	%{name}.demolevel.tar.bz2
 License:	GPL
 Group:		Games/Arcade
 URL:		http://www.luolamies.org/software/luola/
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	ImageMagick SDL-devel SDL_image-devel SDL_mixer-devel
 
 %description
