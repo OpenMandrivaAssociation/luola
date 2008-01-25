@@ -1,6 +1,6 @@
 %define name	luola
 %define version	1.3.2
-%define release	%mkrel 1
+%define release	%mkrel 2
 %define Summary	Fly a small V shaped ship in a 2D arcade game
 
 Summary:	%{Summary}
@@ -10,7 +10,7 @@ Release:	%{release}
 Source0:	http://www.luolamies.org/software/luola/%{name}-%{version}.tar.bz2
 Source1:	%{name}.stdlevels.tar.bz2
 Source2:	%{name}.demolevel.tar.bz2
-License:	GPL
+License:	GPLv2+
 Group:		Games/Arcade
 URL:		http://www.luolamies.org/software/luola/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -43,10 +43,10 @@ mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
 cat << EOF > %buildroot%{_datadir}/applications/mandriva-%{name}.desktop
 [Desktop Entry]
 Type=Application
-Exec=%{_gamesbindir}/%{name}		  
-Icon=%{name}		  		  
-Categories=Game;ArcadeGame;		  
-Name=Luola		  
+Exec=%{_gamesbindir}/%{name}
+Icon=%{name}
+Categories=Game;ArcadeGame;
+Name=Luola
 Comment=%{Summary}
 EOF
 #Icons
