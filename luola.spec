@@ -14,7 +14,7 @@ License:	GPLv2+
 Group:		Games/Arcade
 URL:		http://www.luolamies.org/software/luola/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	ImageMagick SDL-devel SDL_image-devel SDL_mixer-devel
+BuildRequires:	imagemagick SDL-devel SDL_image-devel SDL_mixer-devel
 
 %description
 Luola is a 2D arcade game where you fly a small V shaped ship in different
