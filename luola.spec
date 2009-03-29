@@ -1,6 +1,6 @@
 %define name	luola
 %define version	1.3.2
-%define release	%mkrel 4
+%define release	%mkrel 5
 %define Summary	Fly a small V shaped ship in a 2D arcade game
 
 Summary:	%{Summary}
@@ -8,8 +8,7 @@ Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:	http://www.luolamies.org/software/luola/%{name}-%{version}.tar.bz2
-Source1:	%{name}.stdlevels.tar.bz2
-Source2:	%{name}.demolevel.tar.bz2
+Source1:    http://luolamies.org/software/luola/stdlevels-6.0.tar.gz
 License:	GPLv2+
 Group:		Games/Arcade
 URL:		http://www.luolamies.org/software/luola/
@@ -24,9 +23,7 @@ Finnish, nowdays most of them are.
 
 %prep
 %setup -q
-tar -jxf %{SOURCE1} -C data/levels
-tar -jxf %{SOURCE2} -C data/levels
-mv data/levels/LEVELPACK data/levels/LEVELS
+tar -xf %{SOURCE1} -C data/levels
 
 %build
 %configure2_5x	--bindir=%{_gamesbindir} --enable-sdl-gfx --datadir=%{_gamesdatadir} --enable-sound
@@ -35,7 +32,7 @@ mv data/levels/LEVELPACK data/levels/LEVELS
 %install
 rm -rf $RPM_BUILD_ROOT
 %{makeinstall_std} datadir=%{_gamesdatadir}
-install -m644 data/levels/*.png %{buildroot}%_gamesdatadir/%name/levels/
+install -m644 data/levels/*.{png,lev} %{buildroot}%_gamesdatadir/%name/levels/
 %find_lang %{name}
 
 #Menu items
