@@ -1,6 +1,6 @@
 %define name	luola
 %define version	1.3.2
-%define release	%mkrel 5
+%define release	%mkrel 6
 %define Summary	Fly a small V shaped ship in a 2D arcade game
 
 Summary:	%{Summary}
