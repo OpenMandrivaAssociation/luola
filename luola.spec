@@ -11,7 +11,7 @@ Source0:	http://www.luolamies.org/software/luola/%{name}-%{version}.tar.bz2
 Source1:    http://luolamies.org/software/luola/stdlevels-6.0.tar.gz
 License:	GPLv2+
 Group:		Games/Arcade
-URL:		http://www.luolamies.org/software/luola/
+URL:		https://www.luolamies.org/software/luola/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	imagemagick SDL-devel SDL_image-devel SDL_mixer-devel
 BuildRequires:	zlib-devel
