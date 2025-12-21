@@ -13,6 +13,11 @@ License:	GPLv2+
 Group:		Games/Arcade
 URL:		https://www.luolamies.org/software/luola/
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	imagemagick SDL-devel SDL_image-devel SDL_mixer-devel
 BuildRequires:	zlib-devel
 %description
